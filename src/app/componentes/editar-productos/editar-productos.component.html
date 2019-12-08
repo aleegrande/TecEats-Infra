@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Tus Productos</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        #editarow
+        {
+            width: 1000px;
+            height: 600px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--NAVBAR-->
+    <nav class="navbar navbar-expand-sm" style="margin-top: -12px;">
+            <a class="navbar-brand ml-2" href="#">
+                <img src="./../../../assets/Logoeats-grande2.png" alt="logo" style="width:170px; height: 94px;">
+            </a>
+            <ul class="navbar-nav"
+                style="margin-left: -17px; width: 572px; background-image: url('./../../../assets/barranav.png'); height: 73px;">
+                <li class="nav-item" style="width: 60px;">
+                    <a class="nav-link " href="../home/home.component.html"
+                        style="margin-left: 20px; margin-top: 15px; color: white; ">Home</a>
+                </li>
+                <li class="nav-item" style="text-align: center; width: 120px;">
+                    <a class="nav-link" href="../productos/productos.component.html"
+                        style=" margin-left: 25px; margin-top: 15px; color: white;">Productos</a>
+                </li>
+                <li class="nav-item" style="text-align: center; width: 120px;">
+                    <a class="nav-link" href="../promociones/promociones.component.html"
+                        style=" margin-left: 15px; margin-top: 15px; color: white;">Promociones</a>
+                </li>
+                <li class="nav-item" style="text-align: center; width: 120px;">
+                    <a class="nav-link" href="../about/about.component.html"
+                        style=" margin-left: 20px; margin-top: 15px; color: white;">Acerca
+                        de</a>
+                </li>
+                <li class="nav-item" style="width: 130px; text-align: center; ">
+                    <a class="nav-link" href="#" style="margin-left: -10px; margin-top: 15px; color: white;">Iniciar
+                        Sesion</a>
+                </li>
+    
+            </ul>
+        </nav>
+    <div class="m-3 col-12 row ">
+            <a href="../agregarproductos/agregarproductos.component.html">
+        <img src="./../../../assets/backto.png" width="30" height="30">
+        </a>
+     </div>
+     <div class=" border border-secondary rounded" id="editarow">
+         <div class="row">
+         <img src="./../../../assets/menu2.jpg" class="col-6" height="600px" width="">
+         <div class="col-5" id="Formulario">
+                <br>
+                <h2 >Editar Producto</h2>
+                <br>
+               <form action="">
+                   <div class="row m-1">
+                    <h6 class="col-6">Nombre del producto</h6><input type="text" class="col-6 border" value="Agua Jamaica">
+                   </div>
+                   <br>
+                   <div class="row m-1">
+                           <h6 class="col-6">Presentación</h6><input type="text" class="col-6 border" value="Agua fresca sabor jamaica">
+                          </div>
+                          <br>
+                          <div class="row m-1">
+                               <h6 class="col-6">Precio</h6><input type="number" class="col-6 border" value="15.00">
+                              </div>
+                              <br>
+                              <div class="row m-1">
+                                   <h6 class="col-6">Horario</h6><input type="text" class="col-6 border" value="10:00-15:00">
+                                  </div>
+                                  <br>
+                                  <div class="row m-1">
+                                       <h6 class="col-6">Disponibilidad (Dias)</h6><input type="text" class="col-6 border" value="Lunes, Martes, Miercoles">
+                                      </div>
+                                      <br>
+                                      <div class="row m-1">
+                                           <h6 class="col-6">Localizacion</h6><input type="text" class="col-6 border" value="Entrada principal del Tecnologico">
+                                          </div>
+                                          <br>
+                                          <div class="row m-1">
+                                               <h6 class="col-6">Observaciones</h6><input type="text" class="col-6 border" value="0.5 litro de agua">
+                                              </div>
+                                              <br>
+                                              <div class="row m-1 col-12">
+                                                   <button class="btn btn-primary">
+                                                       Editar
+                                                   </button>
+                                                  </div>
+                                                  <br>
+                </form>
+            </div>
+        </div>
+    </div>
+    </body>
+    </html>
+

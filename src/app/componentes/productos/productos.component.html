@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+    <style>
+        .form {
+
+            margin-left: 550px;
+        }
+
+        .carousel-inner img {
+            width: 900px;
+        }
+
+        .carousel-control-next,
+        .carousel-control-prev {
+            filter: invert(100%);
+        }
+    </style>
+</head>
+
+
+<body style="width: 1330px;">
+    <nav class="navbar navbar-expand-sm" style="margin-top: -12px;">
+        <a class="navbar-brand ml-2" href="#">
+            <img src="./../../../assets/Logoeats-grande2.png" alt="logo" style="width:170px; height: 94px;">
+        </a>
+        <ul class="navbar-nav" 
+            style="margin-left: -17px; width: 572px; background-image: url('./../../../assets/barranav.png'); height: 73px;">
+            <li class="nav-item" style="width: 60px;">
+                <a class="nav-link " (click)="abrirHome()"
+                    style="margin-left: 20px; margin-top: 15px; color: white; ">Home</a>
+            </li>
+            <li class="nav-item" style="text-align: center; width: 120px;">
+                <a class="nav-link" (click)="abrirProducto()"
+                    style=" margin-left: 25px; margin-top: 15px; color: white;" >Productos</a>
+            </li>
+            <li class="nav-item" style="text-align: center; width: 120px;">
+                <a class="nav-link" (click)="abrirPromociones()"
+                    style=" margin-left: 15px; margin-top: 15px; color: white;">Promociones</a>
+            </li>
+            <li class="nav-item" style="text-align: center; width: 120px;">
+                <a class="nav-link" (click)="abrirAcerca()"
+                    style=" margin-left: 20px; margin-top: 15px; color: white;">Acerca
+                    de</a>
+            </li>
+            <li class="nav-item" style="width: 130px; text-align: center; ">
+                <a class="nav-link" (click)="abrirIniciar()" style="margin-left: -10px; margin-top: 15px; color: white;">Iniciar
+                    Sesion</a>
+            </li>
+
+        </ul>
+    </nav>
+    <img src="./../../../assets/bandaProductos.png" width="900px" height="150px" style="margin-top: -30px; margin-left: 250px;">
+    <div class="ml-4 mb-1">
+        <div class="row">
+
+            <div class="card col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                <img class="card-img-top" style="height:350px"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTP5APrmzJR452KdomfHiVCCcjNy6lKoVU9M7LV7T7Z4oGE6YTE"
+                    alt="Card image">
+                <div class="card-body">
+                    <h4 class="card-title">Burritos</h4>
+                    <p class="card-text">Disfruta de los mejores burritos de todo el tec.</p>
+                    <a (click)="abrirDesBurritos()" class="btn btn-primary">Ver mas</a>
+                </div>
+
+            </div>
+
+            <div class="card col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                <img class="card-img-top" style="height:350px"
+                    src="https://i.pinimg.com/564x/68/d0/89/68d0890c7c08ad2cfd6c8e1e9d0b5c95.jpg" alt="Card image">
+                <div class="card-body">
+                    <h4 class="card-title">Aguas</h4>
+                    <p class="card-text">Disfruta de las mejores aguas frescas de todo el tec.</p>
+                    <a (click)="abrirDesAguas()" class="btn btn-primary">Ver mas</a>
+                </div>
+            </div>
+
+            <div class="card col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                <img class="card-img-top  mt-2" style="height:350px"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTy3mYXRDrmluE017Wb0GKgMJvS7ufBI3IYE2lwH0fUqrxkjtgL"
+                    alt="Card image">
+                <div class="card-body">
+                    <h4 class="card-title">Tortas</h4>
+                    <p class="card-text">Disfruta de las mejores tortas de todo el tec.</p>
+                    <a (click)="abrirDesTortas()" class="btn btn-primary">Ver mas</a>
+                </div>
+            </div>
+            <div class="card col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                <img class="card-img-top mt-2" style="height:350px"
+                    src="https://i.pinimg.com/564x/3d/7d/8b/3d7d8b481e45e36cbdec40952a544a1e.jpg" alt="Card image">
+                <div class="card-body">
+                    <h4 class="card-title">Donas Glaseadas</h4>
+                    <p class="card-text">Disfruta de las mejores donas de todo el tec.</p>
+                    <a (click)="abrirDesDonas()" class="btn btn-primary">Ver mas</a>
+
+                </div>
+            </div>
+
+
+
+        </div> <!-- CIERRE DIV ROW-->
+    </div>
+    <div class="ml-4 mb-1">
+        <div class="row">
+
+            <div class="card col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                <img class="card-img-top" style="height:350px"
+                    src="https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/BC0A9F39-4846-4F40-8575-CC6E9A6B4293/Derivates/1a61dd36-a596-4b64-849d-8963516ee2d9.jpg"
+                    alt="Card image">
+                <div class="card-body">
+                    <h4 class="card-title">Tacos de Canasta</h4>
+                    <p class="card-text">Disfruta de los mejores tacos de canasta de todo el tec.</p>
+                    <a href="" class="btn btn-primary">Ver mas</a>
+                </div>
+
+            </div>
+
+            <div class="card col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                <img class="card-img-top" style="height:350px"
+                    src="https://i.pinimg.com/564x/63/df/0b/63df0bd0af1b2e9b01cbe2af57386081.jpg" alt="Card image">
+                <div class="card-body">
+                    <h4 class="card-title">Empanadas</h4>
+                    <p class="card-text">Disfruta de las empanadas de todo el tec.</p>
+                    <a href="" class="btn btn-primary">Ver mas</a>
+                </div>
+            </div>
+
+            <div class="card col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                <img class="card-img-top  mt-2" style="height:350px"
+                    src="https://unareceta.com/wp-content/uploads/2014/07/hamburguesa-de-pollo.jpg"
+                    alt="Card image">
+                <div class="card-body">
+                    <h4 class="card-title">Hamburguesas de Pollo</h4>
+                    <p class="card-text">Disfruta de las mejores hamburguesas de todo el tec.</p>
+                    <a href="../descripciontortas/descripciontortas.component.html" class="btn btn-primary">Ver mas</a>
+                </div>
+            </div>
+            <div class="card col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                <img class="card-img-top mt-2" style="height:350px"
+                    src="http://nnsinaloa.com/media/noticias/field_image_tamales-gourmet-965x667.jpg" alt="Card image">
+                <div class="card-body">
+                    <h4 class="card-title">Tamales</h4>
+                    <p class="card-text">Disfruta de las mejores tamales de todo el tec.</p>
+                    <a href="../descripciondonas/descripciondonas.component.html" class="btn btn-primary">Ver mas</a>
+
+                </div>
+            </div>
+
+
+
+        </div> <!-- CIERRE DIV ROW-->
+    </div> <!-- CIERRE DIV QUE CONTIENE ROW -->
+</body>
+
+</html>
