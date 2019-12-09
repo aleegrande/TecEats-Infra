@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 
 import { HomeComponent } from './componentes/home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+
 import { ProductosComponent } from './componentes/productos/productos.component';
 import { PromocionesComponent } from './componentes/promociones/promociones.component';
 import { AboutComponent } from './componentes/about/about.component';
@@ -19,6 +21,16 @@ import { EditarProductosComponent } from './componentes/editar-productos/editar-
 import { LoginComponent } from './componentes/login/login.component';
 
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {AngularFireModule} from '@angular/fire';
+import {environment}from '../environments/environment';
+//servicios de firebase
+import {AngularFirestoreModule} from '@angular/fire/firestore';
+// import { HttpModule } from '@angular/http';
+import {AngularFireStorageModule} from '@angular/fire/storage';
+import{AngularFireDatabaseModule} from "@angular/fire/database";
+import{AngularFireAuthModule} from "@angular/fire/auth";
+
+
 
 @NgModule({
   declarations: [
@@ -40,7 +52,13 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
     BrowserModule,
     NgbModule,
     AppRoutingModule,
-    FormsModule, ReactiveFormsModule
+    FormsModule, ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
+    FormsModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

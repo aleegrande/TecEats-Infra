@@ -10,14 +10,14 @@
             margin-left: 688px;
 
         }
-        #imagenfondo
-        {
-            background-image:url('https://i.pinimg.com/564x/c3/58/10/c358109b7d68a685f6e86ac3cb313342.jpg');
+
+        #imagenfondo {
+            background-image: url('https://i.pinimg.com/564x/c3/58/10/c358109b7d68a685f6e86ac3cb313342.jpg');
             min-height: 60vh;
             background-position: center;
         }
-        #imagenfondo:before
-        {
+
+        #imagenfondo:before {
             content: '';
             background: linear-gradient(#ffffff 50%, #ffffff 50%);
             width: 1320px;
@@ -26,16 +26,16 @@
             opacity: .5;
             z-index: 0;
         }
-        #Formulario
-        {
+
+        #Formulario {
             width: 600px;
             border-radius: 6px;
             position: relative;
             z-index: 1;
             background-color: white;
         }
-        h2
-        {
+
+        h2 {
             color: #000000;
             text-align: center;
         }
@@ -43,82 +43,115 @@
 </head>
 
 <body>
-        <nav class="navbar navbar-expand-sm" style="margin-top: -12px;">
-                <a class="navbar-brand ml-2" href="#">
-                    <img src="./../../../assets/Logoeats-grande2.png" alt="logo" style="width:170px; height: 94px;">
-                </a>
-                <ul class="navbar-nav"
-                    style="margin-left: -17px; width: 572px; background-image: url('./../../../assets/barranav.png'); height: 73px;">
-                    <li class="nav-item" style="width: 60px;">
-                        <a class="nav-link " href="../home/home.component.html"
-                            style="margin-left: 20px; margin-top: 15px; color: white; ">Home</a>
-                    </li>
-                    <li class="nav-item" style="text-align: center; width: 120px;">
-                        <a class="nav-link" href="../productos/productos.component.html"
-                            style=" margin-left: 25px; margin-top: 15px; color: white;">Productos</a>
-                    </li>
-                    <li class="nav-item" style="text-align: center; width: 120px;">
-                        <a class="nav-link" href="../promociones/promociones.component.html"
-                            style=" margin-left: 15px; margin-top: 15px; color: white;">Promociones</a>
-                    </li>
-                    <li class="nav-item" style="text-align: center; width: 120px;">
-                        <a class="nav-link" href="../about/about.component.html"
-                            style=" margin-left: 20px; margin-top: 15px; color: white;">Acerca
-                            de</a>
-                    </li>
-                    <li class="nav-item" style="width: 130px; text-align: center; ">
-                        <a class="nav-link" href="#" style="margin-left: -10px; margin-top: 15px; color: white;">Iniciar
-                            Sesion</a>
-                    </li>
-        
-                </ul>
-            </nav>  
-    <div class="col-12 mb-2 mt-1">
-            <a href="../agregarproductos/agregarproductos.component.html">
-        <img src="./../../../assets/backto.png" width="30" height="30">
+    <nav class="navbar navbar-expand-sm" style="margin-top: -12px;">
+        <a class="navbar-brand ml-2" href="#">
+            <img src="./../../../assets/Logoeats-grande2.png" alt="logo" style="width:170px; height: 94px;">
         </a>
-     </div>
-     <div id="imagenfondo" class="ml-4 mr-4 mb-1">
-         <br>
-         <!--<div class="col-12 mb-2 mt-1">
+        <ul class="navbar-nav"
+            style="margin-left: -17px; width: 572px; background-image: url('./../../../assets/barranav.png'); height: 73px;">
+            <li class="nav-item" style="width: 60px;">
+                <a class="nav-link " href="../home/home.component.html"
+                    style="margin-left: 20px; margin-top: 15px; color: white; ">Home</a>
+            </li>
+            <li class="nav-item" style="text-align: center; width: 120px;">
+                <a class="nav-link" href="../productos/productos.component.html"
+                    style=" margin-left: 25px; margin-top: 15px; color: white;">Productos</a>
+            </li>
+            <li class="nav-item" style="text-align: center; width: 120px;">
+                <a class="nav-link" href="../promociones/promociones.component.html"
+                    style=" margin-left: 15px; margin-top: 15px; color: white;">Promociones</a>
+            </li>
+            <li class="nav-item" style="text-align: center; width: 120px;">
+                <a class="nav-link" href="../about/about.component.html"
+                    style=" margin-left: 20px; margin-top: 15px; color: white;">Acerca
+                    de</a>
+            </li>
+            <li class="nav-item" style="width: 130px; text-align: center; ">
+                <a class="nav-link" href="#" style="margin-left: -10px; margin-top: 15px; color: white;">Iniciar
+                    Sesion</a>
+            </li>
+
+        </ul>
+    </nav>
+    <div class="col-12 mb-2 mt-1">
+        <a [routerLink]="['/verProductos']" routerLinkActive="router-link-active" >
+            <img src="./../../../assets/backto.png" width="30" height="30">
+        </a>
+    </div>
+    <div id="imagenfondo" class="ml-4 mr-4 mb-1">
+        <br>
+        <!--<div class="col-12 mb-2 mt-1">
                 <a href="../agregarproductos/agregarproductos.component.html">
             <img src="./../../../assets/backto.png" width="30" height="30">
             </a>
          </div>-->
-         <div class="container " id="Formulario">
-             <br>
-             <h2 >Crear un Producto</h2>
+        <div class="container " id="Formulario">
+            <br>
+            <h2>Crear un Producto</h2>
 
-            <form action="">
+            <form (ngSubmit)="addProductos()">
                 <div class="row m-1">
-                 <h6 class="col-5">Nombre del producto</h6><input type="text" class="col-6 border">
+                    <h6 class="col-5">Nombre del producto</h6><input class="col-6 border" type="text" name="nombre"
+                        [(ngModel)]="productoss.nombre" placeholder="Nombre Producto">
                 </div>
                 <div class="row m-1">
-                        <h6 class="col-5">Presentación</h6><input type="text" class="col-6 border">
-                       </div>
-                       <div class="row m-1">
-                            <h6 class="col-5">Precio</h6><input type="number" class="col-6 border">
-                           </div>
-                           <div class="row m-1">
-                                <h6 class="col-5">Horario</h6><input type="text" class="col-6 border">
-                               </div>
-                               <div class="row m-1">
-                                    <h6 class="col-5">Disponibilidad (Dias)</h6><input type="text" class="col-6 border">
-                                   </div>
-                                   <div class="row m-1">
-                                        <h6 class="col-5">Localizacion</h6><input type="text" class="col-6 border">
-                                       </div>
-                                       <div class="row m-1">
-                                            <h6 class="col-5">Observaciones</h6><input type="text" class="col-6 border">
-                                           </div>
-                                           <div class="row m-1 col-12">
-                                                <button class="btn btn-primary">
-                                                    Agregar
-                                                </button>
-                                               </div>
-                                               <br>
-             </form>
-         </div>
-     </div>
-    </body>
-    </html>
+                    <h6 class="col-5">Presentación</h6><input class="col-6 border" type="text" name="presentacion"
+                        [(ngModel)]="productoss.presentacion" placeholder="......">
+                </div>
+                <div class="row m-1">
+                    <h6 class="col-5">Precio</h6><input type="number" class="col-6 border" name="precio"
+                        [(ngModel)]="productoss.precio" placeholder="Precio" step="0.01">
+                </div>
+                <div class="row m-1">
+                    <h6 class="col-5">Horario</h6><input class="col-6 border" type="text" name="horario"
+                        [(ngModel)]="productoss.horario" placeholder="ingresa tu hora">
+                </div>
+                <div class="row m-1">
+                    <h6 class="col-5">Disponibilidad (Dias)</h6><input class="col-6 border" type="text"
+                        name="disponibilidad" [(ngModel)]="productoss.disponibilidad" placeholder="dias de la semana">
+                </div>
+                <div class="row m-1">
+                    <h6 class="col-5">Localizacion</h6><input class="col-6 border" type="text" name="localizacion"
+                        [(ngModel)]="productoss.localizacion" placeholder="direccion de tu negocio">
+                </div>
+                <div class="row m-1">
+                    <h6 class="col-5">Observaciones</h6><input class="col-6 border" type="text" name="observaciones"
+                        [(ngModel)]="productoss.observaciones" placeholder="observaciones de su producto">
+                </div>
+                <div class="row m-1">
+                    <h6 class="col-5">Selecciona tu foto</h6><br> <input type="file" accept=".png,.jpg"
+                        (change)="onUpload($event)">
+                </div>
+                <div class="progress row m-1">
+                    <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
+                        [style.width]="(uploadPercent |async)+'%' ">
+                    </div>
+                </div>
+                <div class="row m-1">
+                    <h6 class="col-5">Link Generado</h6>
+                    <p>{{urlImage | async}}</p> <input #imageUser type="hidden" [value]="urlImage | async" id="valorurl"
+                        name="linkrea">
+                </div>
+                <div class="row m-1">
+                    <h6 class="col-5">Pegue aqui el link Generado</h6><input class="col-6 border" type="text" name="link"
+                        [(ngModel)]="productoss.link" placeholder="URL">
+                </div>
+                <hr>
+                <div class="row m-1 col-12">
+
+                    <button type="submit" *ngIf="urlImage | async;else btnDisponible" class="btn btn-dark btn-block">
+                        Agregar
+                    </button>
+                    <ng-template #btnDisponible>
+                        <button type="submit" disabled=true class="btn btn-dark btn-block" [value]="urlImage | async" >
+                            Agregar
+                        </button>
+                    </ng-template>
+                </div>
+                <br>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

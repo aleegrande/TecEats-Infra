@@ -10,169 +10,148 @@
 <body>
     <!--NAVBAR-->
     <nav class="navbar navbar-expand-sm" style="margin-top: -12px;">
-            <a class="navbar-brand ml-2" href="#">
-                <img src="./../../../assets/Logoeats-grande2.png" alt="logo" style="width:170px; height: 94px;">
+        <a class="navbar-brand ml-2" href="#">
+            <img src="./../../../assets/Logoeats-grande2.png" alt="logo" style="width:170px; height: 94px;">
+        </a>
+        <ul class="navbar-nav"
+            style="margin-left: -17px; width: 572px; background-image: url('./../../../assets/barranav.png'); height: 73px;">
+            <li class="nav-item" style="width: 60px;">
+                <a class="nav-link " href="../home/home.component.html"
+                    style="margin-left: 20px; margin-top: 15px; color: white; ">Home</a>
+            </li>
+            <li class="nav-item" style="text-align: center; width: 120px;">
+                <a class="nav-link" href="../productos/productos.component.html"
+                    style=" margin-left: 25px; margin-top: 15px; color: white;">Productos</a>
+            </li>
+            <li class="nav-item" style="text-align: center; width: 120px;">
+                <a class="nav-link" href="../promociones/promociones.component.html"
+                    style=" margin-left: 15px; margin-top: 15px; color: white;">Promociones</a>
+            </li>
+            <li class="nav-item" style="text-align: center; width: 120px;">
+                <a class="nav-link" href="../about/about.component.html"
+                    style=" margin-left: 20px; margin-top: 15px; color: white;">Acerca
+                    de</a>
+            </li>
+            <li class="nav-item" style="width: 130px; text-align: center; ">
+                <a class="nav-link" href="#" style="margin-left: -10px; margin-top: 15px; color: white;">Iniciar
+                    Sesion</a>
+            </li>
+
+        </ul>
+    </nav>
+    <div style="width: auto;">
+        <div class="mr-2 d-flex flex-row-reverse">
+            <a [routerLink]="['/crearProductos']" routerLinkActive="router-link-active">
+                <button class="btn btn-primary  mt-2">
+                    <img src='./../../../assets/productos.png' width="40px" />
+                    Agregar Producto
+                </button>
             </a>
-            <ul class="navbar-nav"
-                style="margin-left: -17px; width: 572px; background-image: url('./../../../assets/barranav.png'); height: 73px;">
-                <li class="nav-item" style="width: 60px;">
-                    <a class="nav-link " href="../home/home.component.html"
-                        style="margin-left: 20px; margin-top: 15px; color: white; ">Home</a>
-                </li>
-                <li class="nav-item" style="text-align: center; width: 120px;">
-                    <a class="nav-link" href="../productos/productos.component.html"
-                        style=" margin-left: 25px; margin-top: 15px; color: white;">Productos</a>
-                </li>
-                <li class="nav-item" style="text-align: center; width: 120px;">
-                    <a class="nav-link" href="../promociones/promociones.component.html"
-                        style=" margin-left: 15px; margin-top: 15px; color: white;">Promociones</a>
-                </li>
-                <li class="nav-item" style="text-align: center; width: 120px;">
-                    <a class="nav-link" href="../about/about.component.html"
-                        style=" margin-left: 20px; margin-top: 15px; color: white;">Acerca
-                        de</a>
-                </li>
-                <li class="nav-item" style="width: 130px; text-align: center; ">
-                    <a class="nav-link" href="#" style="margin-left: -10px; margin-top: 15px; color: white;">Iniciar
-                        Sesion</a>
-                </li>
-    
-            </ul>
-        </nav>
-<div style="width: auto;">
-    <div class="mr-2 d-flex flex-row-reverse">
-        <a href="../crearproductos/crearproductos.component.html">
-        <button class="btn btn-primary  mt-2">
-            <img src='./../../../assets/productos.png' width="40px" />
-            Agregar Producto
-        </button>
-    </a>
-    </div>
-    <div class="row ml-1 mr-1 mt-2">
-        <div class="card col-lg-4 col-md-6 col-sm-12 col-xs-12 ">
-            <br>
-            <img class="card-img-top" style="height:300px"
-                src="./../../../assets/aguajamaica.jpg"
-                alt="aguaJamaica">
-                <div class="card-body">
-                    <h5 class="card-title">Aguas Jamaica</h5>
-                    <p style="margin: 0px;" >Disfruta las mejores aguas del tec
-                            <br>
-                            <strong class="text-success"><br>Precio: </strong> 0.5 L x 15.00 y 1 L x 25.00
-                            <strong class="text-danger"><br>Horario: </strong> 10:00-15:00
-                            <strong class="text-primary"><br>Dias disponibles: </strong> Lunes a Viernes                    
-                            <strong class="text-dark"><br>Localizacion:</strong> Entrada principal del Tec (Av. Tecnologico)
-                    </p>
-                    <br>
-                    <a href="../editarproducto/editarproducto.component.html" class="btn btn-primary">Editar</a>
-                <a href="#" class="btn btn-danger">Eliminar</a>
-                </div>
         </div>
-        <div class="card col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                <br>
-                <img class="card-img-top" style="height:300px"
-                    src="./../../../assets/aguajamaica.jpg"
-                    alt="aguaJamaica">
+        <div *ngIf="productos.length>0;else noproductos">
+            <div class="row ml-1 mr-1 mt-2">
+                <div class="card col-lg-4 col-md-6 col-sm-12 col-xs-12 " *ngFor="let p of productos">
+                    <br>
+                    <img class="card-img-top" style="height:300px" [src]="p.link" alt="aguaJamaica">
                     <div class="card-body">
-                        <h5 class="card-title">Aguas jamaica</h5>
-                        <p style="margin: 0px;" >Disfruta las mejores aguas del tec
-                                <br>
-                                <strong class="text-success"><br>Precio: </strong> 0.5 L x 15.00 y 1 L x 25.00
-                                <strong class="text-danger"><br>Horario: </strong> 10:00-15:00
-                                <strong class="text-primary"><br>Dias disponibles: </strong> Lunes a Viernes                    
-                                <strong class="text-dark"><br>Localizacion:</strong> Entrada principal del Tec (Av. Tecnologico)
+                        <h5 class="card-title">{{p.nombre}}</h5>
+                        <p style="margin: 0px;">{{p.presentacion}}
+                            <br>
+                            <strong class="text-success"><br>Precio: </strong> {{p.precio}}
+                            <strong class="text-danger"><br>Horario: </strong> {{p.horario}}
+                            <strong class="text-primary"><br>Dias disponibles: </strong> {{p.disponibilidad}}
+                            <strong class="text-dark"><br>Localizacion:</strong> {{p.localizacion}}
+                            <strong class="text-warning"><br>Observaciones:</strong> {{p.observaciones}}
                         </p>
                         <br>
-                        <a href="#" class="btn btn-primary">Editar</a>
-                    <a href="#" class="btn btn-danger">Eliminar</a>
+                        <button (click)="editar($event,p)" class="btn btn-primary">Editar</button>
+                        <button class="btn btn-danger" (click)="borrar($event,p)">Eliminar</button>
                     </div>
-            </div>
-            <div class="card col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                    <br>
-                    <img class="card-img-top" style="height:300px"
-                        src="./../../../assets/aguaLimon.jpg"
-                        alt="aguaJamaica">
-                        <div class="card-body">
-                            <h5 class="card-title">Aguas Limon</h5>
-                            <p style="margin: 0px;" >Disfruta las mejores aguas del tec
-                                    <br>
-                                    <strong class="text-success"><br>Precio: </strong> 0.5 L x 15.00 y 1 L x 25.00
-                                    <strong class="text-danger"><br>Horario: </strong> 10:00-15:00
-                                    <strong class="text-primary"><br>Dias disponibles: </strong> Lunes a Viernes                    
-                                    <strong class="text-dark"><br>Localizacion:</strong> Entrada principal del Tec (Av. Tecnologico)
-                            </p>
-                            <br>
-                            <a href="#" class="btn btn-primary">Editar</a>
-                        <a href="#" class="btn btn-danger">Eliminar</a>
+                    <div>
+
+                        <div *ngIf="editando &&  editarProducto.id==p.id">
+
+                            <button onclick="document.getElementById('id01').style.display='block'"
+                                class="w3-button w3-black">Habilitar Edición</button>
+
+                            <div id="id01" class="w3-modal">
+                                <div class="w3-modal-content w3-card-4">
+                                    <header class="w3-container w3-teal">
+                                        <span onclick="document.getElementById('id01').style.display='none'"
+                                            class="w3-button w3-display-topright">&times;</span>
+                                        <h2>Datos a Actualizar</h2>
+                                    </header>
+                                    <div class="w3-container">
+                                        <form (ngSubmit)="actualizar()">
+                                            <div class="form-group mt-3">
+                                                <input type="text" name="nombre" [(ngModel)]="editarProducto.nombre"
+                                                    class="form-control" placeholder="Nombre Producto">
+                                            </div>
+                                            <div class="form-group mt-3">
+                                                <input type="text" name="presentacion"
+                                                    [(ngModel)]="editarProducto.presentacion" class="form-control"
+                                                    placeholder="Presentacion">
+                                            </div>
+                                            <div class="form-group mt-3">
+                                                <input type="text" name="precio" [(ngModel)]="editarProducto.precio"
+                                                    class="form-control" placeholder="Precio">
+                                            </div>
+                                            <div class="form-group mt-3">
+                                                <input type="text" name="horario" [(ngModel)]="editarProducto.horario"
+                                                    class="form-control" placeholder="ingresa tu hora">
+                                            </div>
+                                            <div class="form-group mt-3">
+                                                <input type="text" name="disponibilidad"
+                                                    [(ngModel)]="editarProducto.disponibilidad" class="form-control"
+                                                    placeholder="dias de la semana">
+                                            </div>
+                                            <div class="form-group mt-3">
+                                                <input type="text" name="localizacion"
+                                                    [(ngModel)]="editarProducto.localizacion" class="form-control"
+                                                    placeholder="direccion de tu negocio">
+                                            </div>
+                                            <div class="form-group mt-3">
+                                                <input type="text" name="observaciones"
+                                                    [(ngModel)]="editarProducto.observaciones" class="form-control"
+                                                    placeholder="observaciones de su producto">
+                                            </div>
+                                            <button type="submit" class="btn btn-warning"> Actualizar</button>
+                                        </form>
+                                    </div>
+                                    <footer class="w3-container w3-teal">
+                                        <p>No olvides precionar el boton amarillo</p>
+                                    </footer>
+                                </div>
+                            </div>
                         </div>
-                </div>
-    </div> <!-- CIERRE DIV ROW-->
-    <div class="row ml-1 mr-1">
-        <div class="card col-lg-4 col-md-6 col-sm-12 col-xs-12">
-            <br>
-            <img class="card-img-top" style="height:300px"
-                src="./../../../assets/agualimon.jpg"
-                alt="aguaJamaica">
-                <div class="card-body">
-                    <h5 class="card-title">Aguas Limon</h5>
-                    <p style="margin: 0px;" >Disfruta las mejores aguas del tec
-                            <br>
-                            <strong class="text-success"><br>Precio: </strong> 0.5 L x 15.00 y 1 L x 25.00
-                            <strong class="text-danger"><br>Horario: </strong> 10:00-15:00
-                            <strong class="text-primary"><br>Dias disponibles: </strong> Lunes a Viernes                    
-                            <strong class="text-dark"><br>Localizacion:</strong> Entrada principal del Tec (Av. Tecnologico)
-                    </p>
-                    <br>
-                    <a href="#" class="btn btn-primary">Editar</a>
-                <a href="#" class="btn btn-danger">Eliminar</a>
-                </div>
-        </div>
-        <div class="card col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                <br>
-                <img class="card-img-top" style="height:300px"
-                    src="./../../../assets/aguahorchata.jpg"
-                    alt="aguaJamaica">
-                    <div class="card-body">
-                        <h5 class="card-title">Aguas Horchata</h5>
-                        <p style="margin: 0px;" >Disfruta las mejores aguas del tec
-                                <br>
-                                <strong class="text-success"><br>Precio: </strong> 0.5 L x 15.00 y 1 L x 25.00
-                                <strong class="text-danger"><br>Horario: </strong> 10:00-15:00
-                                <strong class="text-primary"><br>Dias disponibles: </strong> Lunes a Viernes                    
-                                <strong class="text-dark"><br>Localizacion:</strong> Entrada principal del Tec (Av. Tecnologico)
-                        </p>
-                        <br>
-                        <a href="#" class="btn btn-primary">Editar</a>
-                    <a href="#" class="btn btn-danger">Eliminar</a>
+
+
+
+
+
+
+
+
+
                     </div>
+                </div>
+
+
             </div>
-            <div class="card col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                    <br>
-                    <img class="card-img-top" style="height:300px"
-                    src="./../../../assets/aguahorchata.jpg"
-                    alt="aguaJamaica">
-                    <div class="card-body">
-                        <h5 class="card-title">Aguas Horchata</h5>
-                        <p style="margin: 0px;" >Disfruta las mejores aguas del tec
-                                <br>
-                                <strong class="text-success"><br>Precio: </strong> 0.5 L x 15.00 y 1 L x 25.00
-                                <strong class="text-danger"><br>Horario: </strong> 10:00-15:00
-                                <strong class="text-primary"><br>Dias disponibles: </strong> Lunes a Viernes                    
-                                <strong class="text-dark"><br>Localizacion:</strong> Entrada principal del Tec (Av. Tecnologico)
-                        </p>
-                        <br>
-                        <a href="#" class="btn btn-primary">Editar</a>
-                    <a href="#" class="btn btn-danger">Eliminar</a>
-                    </div>
-                </div>
-    </div> <!-- CIERRE DIV ROW-->
-    <ul class="pagination justify-content-center mt-2 mb-2">
-        <li class="page-item"><a class="page-link" href="javascript:void(0);">Previous</a></li>
-        <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
-        <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
-        <li class="page-item"><a class="page-link" href="javascript:void(0);">Next</a></li>
-    </ul>
-</div>
+
+        </div> <!-- CIERRE DIV ROW-->
+
+        <ng-template #noproductos>
+            <h1>No hay Productos disponibles :´(</h1>
+        </ng-template>
+
+        <ul class="pagination justify-content-center mt-2 mb-2">
+            <li class="page-item"><a class="page-link" href="javascript:void(0);">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
+            <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+            <li class="page-item"><a class="page-link" href="javascript:void(0);">Next</a></li>
+        </ul>
+    </div>
 </body>
 
 </html>
