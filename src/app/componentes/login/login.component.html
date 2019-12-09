@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>TecEats</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body style="width: 1330px;">
+    <nav class="navbar navbar-expand-sm" style="margin-top: -12px;">
+        <a class="navbar-brand ml-2" href="#">
+            <img src="./../../../assets/Logoeats-grande2.png" alt="logo" style="width:170px; height: 94px;">
+        </a>
+        <ul class="navbar-nav"
+            style="margin-left: -17px; width: 572px; background-image: url('./../../../assets/barranav.png'); height: 73px;">
+            <li class="nav-item" style="width: 60px;">
+                <a class="nav-link " (click)="abrirHome()"
+                    style="margin-left: 20px; margin-top: 15px; color: white; ">Home</a>
+            </li>
+            <li class="nav-item" style="text-align: center; width: 120px;">
+                <a class="nav-link" (click)="abrirProducto()"
+                    style=" margin-left: 25px; margin-top: 15px; color: white;">Productos</a>
+            </li>
+            <li class="nav-item" style="text-align: center; width: 120px;">
+                <a class="nav-link" (click)="abrirPromociones()"
+                    style=" margin-left: 15px; margin-top: 15px; color: white;">Promociones</a>
+            </li>
+            <li class="nav-item" style="text-align: center; width: 120px;">
+                <a class="nav-link" (click)="abrirAcerca()"
+                    style=" margin-left: 20px; margin-top: 15px; color: white;">Acerca
+                    de</a>
+            </li>
+            <li class="nav-item" style="width: 130px; text-align: center; ">
+                <a class="nav-link" (click)="abrirIniciar()"
+                    style="margin-left: -10px; margin-top: 15px; color: white;">Iniciar
+                    Sesion</a>
+            </li>
+
+        </ul>
+    </nav>
+    <div class="contenedor">
+        <!-- Nav tabs -->
+        <div id="pestanas" class="ml-4 mr-2 mt-1">
+            <ul class="nav nav-tabs">
+
+                <li class="nav-item">
+                    <a class="nav-link active btn btn-outline-primary" data-toggle="tab" href="#home">Inicio/Sesion</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-outline-info" data-toggle="tab" href="#menu1">Registro</a>
+                </li>
+
+            </ul>
+        </div>
+        <div class="tab-content">
+            <div id="home" class="container tab-pane active"><br>
+                <div class="col-sm-12 seccion-principal ">
+                    <div class="modal-content" style="background-color:cornflowerblue;">
+                        <div class="mt-3 ">
+                            <img src="./../../../assets/usuario2.jpeg"  style="display: block;
+                            margin-left: auto;
+                            margin-right: auto;
+                            width: 15%;
+                        ">
+                        </div>
+                        <form action="" class="col-12">
+                            <div class="form-group" id="usuario" style="margin-left:250px; margin-right:200px">
+                                <input type="email" name="email" class="form-control" placeholder="@" required>
+                            </div>
+                            <div class="form-group" id="contrasena" style="margin-left:250px; margin-right:200px">
+                                <input name="password" type="password" placeholder="*****" required
+                                    class="form-control">
+                            </div>
+                            <table style="margin-left: 350px;">
+                                <tr>
+                                    <td>
+                                            <button type="submit" class="btn btn-secondary " (click)="onLogin()"><i
+                                                class="fas fa-sign-in-alt"></i>
+                                            Ingresar</button>
+                                    </td>
+                                    <td>
+                                            <button expand="block" size="large" (click)="onLoginGoogle()" class="btn  btn-danger"><i
+                                                class="fab fa-google-plus-g"></i>
+                                            Google
+                                        </button>
+                                    </td>
+                                    <td>
+                                            <button expand="block" size="large" class="btn  btn-dark" (click)="onLoginGit()"> <i
+                                                class="fab fa-github-square"></i>
+                                            GitHub
+                                        </button>
+                                    </td>
+                                    <td>
+                                            <button expand="block" size="large" class="btn  btn-primary" (click)="onLoginFacebook()"> <i
+                                                class="fab fa-facebook-square"></i>
+                                            Facebook
+                                        </button>
+                                    </td>
+                                    <td>
+                                            <button expand="block" size="large" class="btn  btn-info" (click)="onLoginTwiter()"> <i
+                                                class="fab fa-twitter"></i>
+                                            Twiter
+                                        </button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                        <br>
+                    </div>
+                    
+                </div>
+                <br>
+            </div>
+            <div id="menu1" class="container tab-pane fade"><br>
+                <div class="col-sm-12 seccion-principal ">
+                        <div class="modal-content" style="background-color:cornflowerblue;">
+                            <div class="mt-3 ">
+                                <img src="./../../../assets/usuario2.jpeg"  style="display: block;
+                                margin-left: auto;
+                                margin-right: auto;
+                                width: 15%;
+                            ">
+                            </div>
+                            <form action="" class="col-12">
+                                    <div class="form-group" id="usuario" style="margin-left:250px; margin-right:200px">
+                                        <input type="email" name="email"  [(ngModel)]="user.email" class="form-control" placeholder="@" required>
+                
+                                    </div>
+                                    <div class="form-group" id="contrasena" style="margin-left:250px; margin-right:200px">
+                                        <input name="password" type="password" [(ngModel)]="user.password" class="form-control" placeholder="*****"  required>
+                
+                                    </div>
+                
+                
+                
+                                    <button style="margin-left:250px; margin-right:200px" type="submit" class="btn btn-secondary" (click)="onRegister()"><i class="fas fa-sign-in-alt"></i>
+                                        Registrate</button>
+                
+                
+                                </form>
+                
+                            <br>
+                        </div>
+                        
+                    </div>
+                    <br>
+              </div>
+        </div>
+    </div>
+</body>
+
+</html>

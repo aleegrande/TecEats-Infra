@@ -16,6 +16,9 @@ import { DesDonasComponent } from './componentes/des-donas/des-donas.component';
 import { VerProductosComponent } from './componentes/ver-productos/ver-productos.component';
 import { CrearProductosComponent } from './componentes/crear-productos/crear-productos.component';
 import { EditarProductosComponent } from './componentes/editar-productos/editar-productos.component';
+import { LoginComponent } from './componentes/login/login.component';
+
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,12 +33,14 @@ import { EditarProductosComponent } from './componentes/editar-productos/editar-
     DesDonasComponent,
     VerProductosComponent,
     CrearProductosComponent,
-    EditarProductosComponent
+    EditarProductosComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     NgbModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule, ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

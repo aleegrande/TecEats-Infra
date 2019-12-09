@@ -28,4 +28,8 @@ export class AboutComponent implements OnInit {
   {
     this.router.navigate(['/about']);
   }
+  abrirIniciar()
+  {
+    this.router.navigate(['/login']);
+  }
 }

@@ -15,6 +15,8 @@ import { VerProductosComponent } from './componentes/ver-productos/ver-productos
 
 import { CrearProductosComponent } from './componentes/crear-productos/crear-productos.component';
 import { EditarProductosComponent } from './componentes/editar-productos/editar-productos.component';
+
+import { LoginComponent } from './componentes/login/login.component';
 const routes: Routes = [
   {
     path:'',
@@ -68,6 +70,11 @@ const routes: Routes = [
   {
     path:'editarProductos',
     component: EditarProductosComponent
+  }
+  ,
+  {
+    path:'login',
+    component: LoginComponent
   }
 ];
 

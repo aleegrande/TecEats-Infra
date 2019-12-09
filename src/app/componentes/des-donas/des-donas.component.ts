@@ -11,6 +11,10 @@ export class DesDonasComponent implements OnInit {
 
   ngOnInit() {
   }
+  abrirIniciar()
+  {
+    this.router.navigate(['/login']);
+  }
   abrirHome()
   {
     this.router.navigate(['/home']);
