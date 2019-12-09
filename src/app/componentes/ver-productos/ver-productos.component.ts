@@ -17,6 +17,9 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class VerProductosComponent implements OnInit {
   productos = [];
 
+  editarProducto: Productos;
+  editando: boolean = false;
+  
   constructor(public productService: ProductosService) { }
 
   ngOnInit() {
@@ -24,5 +27,19 @@ export class VerProductosComponent implements OnInit {
       this.productos = productos;
     });
   }
+  borrar(event, productos) {
+    this.productService.deleteProductos(productos);
+  }
+  editar(event, productos) {
+    this.editarProducto = productos;
+    this.editando = !this.editando;
+
+  }
+  actualizar() {
+    this.productService.actualizarProductos(this.editarProducto);
+    this.editarProducto = {} as Productos;
+    this.editando = false;
+  }
+
 
 }

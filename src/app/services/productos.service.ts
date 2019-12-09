@@ -37,5 +37,16 @@ export class ProductosService {
 
     this.productosColeccion.add(productos);
   }
+  deleteProductos(productos: Productos) {
+    if (confirm('Estas seguro de eliminarlo?')) {
+      this.productosDoc = this.db.doc(`productos/${productos.id}`);
+      this.productosDoc.delete();
+    }
 
+  }
+  actualizarProductos(productos: Productos) {
+    this.productosDoc = this.db.doc(`productos/${productos.id}`);
+    this.productosDoc.update(productos);
+
+  }
 }
