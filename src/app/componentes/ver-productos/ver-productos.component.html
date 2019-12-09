@@ -48,124 +48,30 @@
         </button>
     </a>
     </div>
-    <div class="row ml-1 mr-1 mt-2">
-        <div class="card col-lg-4 col-md-6 col-sm-12 col-xs-12 ">
+    <div class="row ml-1 mr-1 mt-2" >
+        <div class="card col-lg-4 col-md-6 col-sm-12 col-xs-12 "  *ngFor="let p of productos">
             <br>
             <img class="card-img-top" style="height:300px"
-                src="./../../../assets/aguajamaica.jpg"
+                [src]="p.link"
                 alt="aguaJamaica">
                 <div class="card-body">
-                    <h5 class="card-title">Aguas Jamaica</h5>
-                    <p style="margin: 0px;" >Disfruta las mejores aguas del tec
+                    <h5 class="card-title">{{p.nombre}}</h5>
+                    <p style="margin: 0px;" >{{p.presentacion}}
                             <br>
-                            <strong class="text-success"><br>Precio: </strong> 0.5 L x 15.00 y 1 L x 25.00
-                            <strong class="text-danger"><br>Horario: </strong> 10:00-15:00
-                            <strong class="text-primary"><br>Dias disponibles: </strong> Lunes a Viernes                    
-                            <strong class="text-dark"><br>Localizacion:</strong> Entrada principal del Tec (Av. Tecnologico)
+                            <strong class="text-success"><br>Precio:  </strong> {{p.precio}}
+                            <strong class="text-danger"><br>Horario: </strong> {{p.horario}}
+                            <strong class="text-primary"><br>Dias disponibles: </strong> {{p.disponibilidad}}                   
+                            <strong class="text-dark"><br>Localizacion:</strong> {{p.localizacion}}
+                            <strong class="text-warning"><br>Observaciones:</strong> {{p.observaciones}}
                     </p>
                     <br>
                     <a href="../editarproducto/editarproducto.component.html" class="btn btn-primary">Editar</a>
                 <a href="#" class="btn btn-danger">Eliminar</a>
                 </div>
         </div>
-        <div class="card col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                <br>
-                <img class="card-img-top" style="height:300px"
-                    src="./../../../assets/aguajamaica.jpg"
-                    alt="aguaJamaica">
-                    <div class="card-body">
-                        <h5 class="card-title">Aguas jamaica</h5>
-                        <p style="margin: 0px;" >Disfruta las mejores aguas del tec
-                                <br>
-                                <strong class="text-success"><br>Precio: </strong> 0.5 L x 15.00 y 1 L x 25.00
-                                <strong class="text-danger"><br>Horario: </strong> 10:00-15:00
-                                <strong class="text-primary"><br>Dias disponibles: </strong> Lunes a Viernes                    
-                                <strong class="text-dark"><br>Localizacion:</strong> Entrada principal del Tec (Av. Tecnologico)
-                        </p>
-                        <br>
-                        <a href="#" class="btn btn-primary">Editar</a>
-                    <a href="#" class="btn btn-danger">Eliminar</a>
-                    </div>
-            </div>
-            <div class="card col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                    <br>
-                    <img class="card-img-top" style="height:300px"
-                        src="./../../../assets/aguaLimon.jpg"
-                        alt="aguaJamaica">
-                        <div class="card-body">
-                            <h5 class="card-title">Aguas Limon</h5>
-                            <p style="margin: 0px;" >Disfruta las mejores aguas del tec
-                                    <br>
-                                    <strong class="text-success"><br>Precio: </strong> 0.5 L x 15.00 y 1 L x 25.00
-                                    <strong class="text-danger"><br>Horario: </strong> 10:00-15:00
-                                    <strong class="text-primary"><br>Dias disponibles: </strong> Lunes a Viernes                    
-                                    <strong class="text-dark"><br>Localizacion:</strong> Entrada principal del Tec (Av. Tecnologico)
-                            </p>
-                            <br>
-                            <a href="#" class="btn btn-primary">Editar</a>
-                        <a href="#" class="btn btn-danger">Eliminar</a>
-                        </div>
-                </div>
+        
     </div> <!-- CIERRE DIV ROW-->
-    <div class="row ml-1 mr-1">
-        <div class="card col-lg-4 col-md-6 col-sm-12 col-xs-12">
-            <br>
-            <img class="card-img-top" style="height:300px"
-                src="./../../../assets/agualimon.jpg"
-                alt="aguaJamaica">
-                <div class="card-body">
-                    <h5 class="card-title">Aguas Limon</h5>
-                    <p style="margin: 0px;" >Disfruta las mejores aguas del tec
-                            <br>
-                            <strong class="text-success"><br>Precio: </strong> 0.5 L x 15.00 y 1 L x 25.00
-                            <strong class="text-danger"><br>Horario: </strong> 10:00-15:00
-                            <strong class="text-primary"><br>Dias disponibles: </strong> Lunes a Viernes                    
-                            <strong class="text-dark"><br>Localizacion:</strong> Entrada principal del Tec (Av. Tecnologico)
-                    </p>
-                    <br>
-                    <a href="#" class="btn btn-primary">Editar</a>
-                <a href="#" class="btn btn-danger">Eliminar</a>
-                </div>
-        </div>
-        <div class="card col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                <br>
-                <img class="card-img-top" style="height:300px"
-                    src="./../../../assets/aguahorchata.jpg"
-                    alt="aguaJamaica">
-                    <div class="card-body">
-                        <h5 class="card-title">Aguas Horchata</h5>
-                        <p style="margin: 0px;" >Disfruta las mejores aguas del tec
-                                <br>
-                                <strong class="text-success"><br>Precio: </strong> 0.5 L x 15.00 y 1 L x 25.00
-                                <strong class="text-danger"><br>Horario: </strong> 10:00-15:00
-                                <strong class="text-primary"><br>Dias disponibles: </strong> Lunes a Viernes                    
-                                <strong class="text-dark"><br>Localizacion:</strong> Entrada principal del Tec (Av. Tecnologico)
-                        </p>
-                        <br>
-                        <a href="#" class="btn btn-primary">Editar</a>
-                    <a href="#" class="btn btn-danger">Eliminar</a>
-                    </div>
-            </div>
-            <div class="card col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                    <br>
-                    <img class="card-img-top" style="height:300px"
-                    src="./../../../assets/aguahorchata.jpg"
-                    alt="aguaJamaica">
-                    <div class="card-body">
-                        <h5 class="card-title">Aguas Horchata</h5>
-                        <p style="margin: 0px;" >Disfruta las mejores aguas del tec
-                                <br>
-                                <strong class="text-success"><br>Precio: </strong> 0.5 L x 15.00 y 1 L x 25.00
-                                <strong class="text-danger"><br>Horario: </strong> 10:00-15:00
-                                <strong class="text-primary"><br>Dias disponibles: </strong> Lunes a Viernes                    
-                                <strong class="text-dark"><br>Localizacion:</strong> Entrada principal del Tec (Av. Tecnologico)
-                        </p>
-                        <br>
-                        <a href="#" class="btn btn-primary">Editar</a>
-                    <a href="#" class="btn btn-danger">Eliminar</a>
-                    </div>
-                </div>
-    </div> <!-- CIERRE DIV ROW-->
+    
     <ul class="pagination justify-content-center mt-2 mb-2">
         <li class="page-item"><a class="page-link" href="javascript:void(0);">Previous</a></li>
         <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
