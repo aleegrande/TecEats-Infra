@@ -17,7 +17,8 @@ export class ProductosService {
   public  imagen:Observable<string>;
   productosColeccion: AngularFirestoreCollection;
   productosDoc: AngularFirestoreDocument<Productos>;
-
+  public correo:string;
+  
   constructor(public db: AngularFirestore) { 
     this.productosColeccion = this.db.collection('productos');
     this.productos = this.productosColeccion.snapshotChanges().pipe(map(actions => {
