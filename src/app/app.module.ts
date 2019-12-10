@@ -29,6 +29,8 @@ import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {AngularFireStorageModule} from '@angular/fire/storage';
 import{AngularFireDatabaseModule} from "@angular/fire/database";
 import{AngularFireAuthModule} from "@angular/fire/auth";
+import { About2Component } from './componentes/about2/about2.component';
+import { ContactoComponent } from './componentes/contacto/contacto.component';
 
 
 
@@ -46,7 +48,9 @@ import{AngularFireAuthModule} from "@angular/fire/auth";
     VerProductosComponent,
     CrearProductosComponent,
     EditarProductosComponent,
-    LoginComponent
+    LoginComponent,
+    About2Component,
+    ContactoComponent
   ],
   imports: [
     BrowserModule,

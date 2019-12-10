@@ -3,12 +3,12 @@ import { Component, OnInit } from '@angular/core';
 
 
 import { ProductosService } from '../../services/productos.service'
-import { Productos } from 'src/app/models/productos';
-import {Router, ActivatedRoute} from '@angular/router';
+import { Productos } from '../../models/productos';
+import { Router, ActivatedRoute } from '@angular/router';
 
 
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import {AngularFireStorage}from '@angular/fire/storage';
+import { AngularFireStorage } from '@angular/fire/storage';
 import { Observable } from 'rxjs';
 import { finalize } from 'rxjs/operators'
 
@@ -23,15 +23,16 @@ export class CrearProductosComponent implements OnInit {
   productoss = {} as Productos;
   uploadPercent: Observable<number>;
   urlImage: Observable<string>;
-
+  correo:String;
 
   constructor(public productosServicio: ProductosService,
-    private storage:AngularFireStorage,private router:Router,) {
-
+    private storage: AngularFireStorage, private router: Router, ) {
+      
   }
 
 
   ngOnInit() {
+    this.correo=this.productosServicio.correo;
   }
 
 
@@ -42,8 +43,8 @@ export class CrearProductosComponent implements OnInit {
     var r = confirm("¿seguro que desea insertar este Producto ?");
     if (r == true) {
 
-      if (this.productoss.nombre != '' && this.productoss.presentacion != '' && this.productoss.precio != null&& this.productoss.horario != '' 
-      &&this.productoss.disponibilidad!= ''&&this.productoss.localizacion!= ''&&this.productoss.observaciones!= '' &&this.productoss.link != null) {
+      if (this.productoss.nombre != '' && this.productoss.presentacion != '' && this.productoss.precio != null && this.productoss.horario != ''
+        && this.productoss.disponibilidad != '' && this.productoss.localizacion != '' && this.productoss.observaciones != '' && this.productoss.link != null) {
         this.productosServicio.addProductos(this.productoss);
         this.productoss = {} as Productos;
         alert("\'Dato Insertado Correctamente....\'");
@@ -67,9 +68,9 @@ export class CrearProductosComponent implements OnInit {
     const referencia = this.storage.ref(filePath);
     const task = this.storage.upload(filePath, file);
     this.uploadPercent = task.percentageChanges();
-    task.snapshotChanges().pipe(finalize(() => this.urlImage = referencia.getDownloadURL())).subscribe(); 
+    task.snapshotChanges().pipe(finalize(() => this.urlImage = referencia.getDownloadURL())).subscribe();
 
-  
+
     //minuto 1:13:26
   }
 

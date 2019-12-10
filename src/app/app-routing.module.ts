@@ -6,6 +6,7 @@ import { ProductosComponent } from './componentes/productos/productos.component'
 import { PromocionesComponent } from './componentes/promociones/promociones.component';
 import { AboutComponent } from './componentes/about/about.component';
 
+import { About2Component } from './componentes/about2/about2.component';
 import { DesBurritosComponent } from './componentes/des-burritos/des-burritos.component';
 import { DesAguasComponent } from './componentes/des-aguas/des-aguas.component';
 import { DesTortasComponent } from './componentes/des-tortas/des-tortas.component';
@@ -17,6 +18,8 @@ import { CrearProductosComponent } from './componentes/crear-productos/crear-pro
 import { EditarProductosComponent } from './componentes/editar-productos/editar-productos.component';
 
 import { LoginComponent } from './componentes/login/login.component';
+
+import { ContactoComponent } from './componentes/contacto/contacto.component';
 const routes: Routes = [
   {
     path:'',
@@ -55,6 +58,14 @@ const routes: Routes = [
   {
     path:'about',
     component: AboutComponent
+  }
+  ,{
+    path:'about2',
+    component: About2Component
+  }
+  ,{
+    path:'contacto',
+    component: ContactoComponent
   }
   ,
   {

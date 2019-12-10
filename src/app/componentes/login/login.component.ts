@@ -3,6 +3,7 @@ import {Router, ActivatedRoute} from '@angular/router';
 
 
 import { AuthService } from '../../services/auth.service';
+import { ProductosService } from '../../services/productos.service';
 import { User } from '../../models/user';
 
 @Component({
@@ -12,10 +13,10 @@ import { User } from '../../models/user';
 })
 export class LoginComponent implements OnInit {
   user:User=new User();
-
+  public correo:string;
 
   constructor(private router:Router,private authSvc:AuthService,
-   private authService:AuthService) { }
+   private authService:AuthService, public servicio:ProductosService) { }
 
   ngOnInit() {
   }
@@ -43,11 +44,12 @@ export class LoginComponent implements OnInit {
     const user=await this.authSvc.onLogin(this.user);
     if(user){
       alert("Felicidades usuario sesion exitosa");
-      this.router.navigateByUrl('/home');
+      this.servicio.correo=this.user.email;
+      this.router.navigateByUrl('/verProductos');
 
     }
     else{
-      alert("\'Usuario o Contraseña Incorractos....\'");
+      alert("\'Usuario o Contraseña Incorrectos....\'");
  
     }
   }
@@ -56,7 +58,8 @@ export class LoginComponent implements OnInit {
     const user=await this.authSvc.onRegister(this.user);
     if(user){
       alert("Terminado usuario creado");
-      this.router.navigateByUrl("/home");
+      this.servicio.correo=this.user.email;
+      this.router.navigateByUrl("/verProductos");
     }
     else{
         alert("\'Usuario o Contraseña Incorractos....\'");   
@@ -80,7 +83,8 @@ export class LoginComponent implements OnInit {
   }
 
   onLoginRedirect():void{
-    this.router.navigate(["/home"]);
+    this.servicio.correo=this.user.email;
+    this.router.navigate(["/verProductos"]);
   }
 
   onLoginFacebook():void{

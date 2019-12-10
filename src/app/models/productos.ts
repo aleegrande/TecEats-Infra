@@ -1,10 +1,14 @@
-  
-export interface Productos{
-    name?:string;
-    descripcion?:string;
-    price?:number;
-    id?:string;
-    img?:string;
-    linkreal?:string;
-    campo?:string;
+
+
+export interface Productos {
+  link?: string;
+  observaciones?: string;
+  localizacion?: string;
+  disponibilidad?: string;
+  horario?: string;
+  precio?: number;
+  presentacion?: string;
+  id?: string;
+  nombre?: string;
+  correo?:string;
 }
