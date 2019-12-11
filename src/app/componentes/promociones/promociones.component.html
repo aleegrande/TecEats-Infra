@@ -2,15 +2,12 @@
 <html lang="en">
 
 <head>
-    <title>Promociones</title>
+    <title>TecEats</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
     <style>
-        .form {
-
-            margin-left: 550px;
+        .carousel-inner img {
+            width: 900px;
         }
 
         .carousel-inner img {
@@ -23,124 +20,132 @@
         }
     </style>
 </head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
-
-<body style="width: 1330px;">
-    <nav class="navbar navbar-expand-sm" style="margin-top: -12px;">
-        <a class="navbar-brand ml-2" href="#">
-            <img src="./../../../assets/Logoeats-grande2.png" alt="logo" style="width:170px; height: 94px;">
-        </a>
-        <ul class="navbar-nav" 
-            style="margin-left: -17px; width: 572px; background-image: url('./../../../assets/barranav.png'); height: 73px;">
-            <li class="nav-item" style="width: 60px;">
-                <a class="nav-link " (click)="abrirHome()"
-                    style="margin-left: 20px; margin-top: 15px; color: white; ">Home</a>
-            </li>
-            <li class="nav-item" style="text-align: center; width: 120px;">
-                <a class="nav-link" (click)="abrirProducto()"
-                    style=" margin-left: 25px; margin-top: 15px; color: white;" >Productos</a>
-            </li>
-            <li class="nav-item" style="text-align: center; width: 120px;">
-                <a class="nav-link" (click)="abrirPromociones()"
-                    style=" margin-left: 15px; margin-top: 15px; color: white;">Promociones</a>
-            </li>
-            <li class="nav-item" style="text-align: center; width: 120px;">
-                <a class="nav-link" (click)="abrirAcerca()"
-                    style=" margin-left: 20px; margin-top: 15px; color: white;">Acerca
-                    de</a>
-            </li>
-            <li class="nav-item" style="width: 130px; text-align: center; ">
-                <a class="nav-link" (click)="abrirIniciar()" style="margin-left: -10px; margin-top: 15px; color: white;">Iniciar
-                    Sesion</a>
-            </li>
-
-        </ul>
-    </nav>
-        <img src="./../../../assets/barracupones.png" width="900px" height="150px" style="margin-top: -30px; margin-left: 200px;">
-    <div class="row ml-4 mb-1">
-        <div class="card col-lg-3 col-md-6 col-sm-12 col-xs-12">
-            <img class="card-img-top mt-2" style="height:200px" src="./../../../assets/cupon1.png">
-            <div class="card-body">
-                <h4 class="card-title">Burritos5-10</h4>
-                <p class="card-text">Cambia este cupon en <strong>"Burritos Burroboy"</strong> valido en la compra de 5
-                    burritos con descuento de 10 pesos.</p>
-                <h6 style="color: tomato;">Valido hasta el 7 Diciembre 2019</h6>
+<body style="height: auto;">
+    <div>
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+            <a class="navbar-brand" href="#"><img src="./../../../assets/logotec.png" alt="logo"
+                    style="width:150px; height: 84px; margin-top: 5px;"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link " (click)="abrirHome()" style="color: white;">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="abrirProducto()" style="color: white;">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="abrirPromociones()" style="color: white;">Promociones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="abrirAcerca()" style="color: white;">Acerca de</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="abrirIniciar()" style="color: white;">Iniciar Sesion</a>
+                    </li>
+                </ul>
             </div>
-
-        </div>
-        <div class="card col-lg-3 col-md-6 col-sm-12 col-xs-12">
-            <img class="card-img-top mt-2" style="height:200px" src="./../../../assets/cupon2.png">
-            <div class="card-body">
-                <h4 class="card-title">Burritos3-25</h4>
-                <p class="card-text">Cambia este cupon en <strong>"Burritos Burroboy"</strong> valido en la compra de 1
-                    paquete de 3 burritos x 25 pesos</p>
-                <h6 style="color: tomato;">Valido hasta el 7 Diciembre 2019</h6>
-            </div>
-
-        </div>
-        <div class="card col-lg-3 col-md-6 col-sm-12 col-xs-12">
-            <img class="card-img-top mt-2" style="height:200px" src="./../../../assets/cupon3.png">
-            <div class="card-body">
-                <h4 class="card-title">Aguas3-50</h4>
-                <p class="card-text">Cambia este cupon en <strong>"Aguas Frescas Tec"</strong> valido en la compra de 3
-                    aguas frescas de 1 litro x 50 pesos</p>
-                <h6 style="color: tomato;">Valido hasta el 7 Diciembre 2019</h6>
-            </div>
-
-        </div>
-        <div class="card col-lg-3 col-md-6 col-sm-12 col-xs-12">
-            <img class="card-img-top mt-2" style="height:200px" src="./../../../assets/cupon4.png">
-            <div class="card-body">
-                <h4 class="card-title">Aguas2-20</h4>
-                <p class="card-text">Cambia este cupon en <strong>"Aguas Frescas Tec"</strong> valido en la compra de 2
-                    agua frescas de 0.5 litros x 10 pesos</p>
-                <h6 style="color: tomato;">Valido hasta el 7 Diciembre 2019</h6>
-            </div>
-
-        </div>
+        </nav>
     </div>
-    <div class="row ml-4 mb-1">
-            <div class="card col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                <img class="card-img-top mt-2" style="height:200px" src="./../../../assets/cupon5.png">
-                <div class="card-body">
-                    <h4 class="card-title">Tortas4-100</h4>
-                    <p class="card-text">Cambia este cupon en <strong>"Tortas Pic Nic"</strong> valido en la compra de 4 tortas de pierna x 100 pesos.</p>
-                    <h6 style="color: tomato;">Valido hasta el 7 Diciembre 2019</h6>
-                </div>
-    
-            </div>
-            <div class="card col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                <img class="card-img-top mt-2" style="height:200px" src="./../../../assets/cupon6.png">
-                <div class="card-body">
-                    <h4 class="card-title">Tortas-10</h4>
-                    <p class="card-text">Cambia este cupon en <strong>"Tortas Pic Nic"</strong> valido en la compra de una torta de pierna con un descuento de 10 pesos</p>
-                    <h6 style="color: tomato;">Valido hasta el 7 Diciembre 2019</h6>
-                </div>
-    
-            </div>
-            <div class="card col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                <img class="card-img-top mt-2" style="height:200px" src="./../../../assets/cupon7.png">
-                <div class="card-body">
-                    <h4 class="card-title">Donas3-50</h4>
-                    <p class="card-text">Cambia este cupon en <strong>"Donas Glaseadas Susy"</strong> valido en la compra de 3 donas x 50 pesos</p>
-                    <h6 style="color: tomato;">Valido hasta el 7 Diciembre 2019</h6>
-                </div>
-    
-            </div>
-            <div class="card col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                <img class="card-img-top mt-2" style="height:200px" src="./../../../assets/cupon8.png">
-                <div class="card-body">
-                    <h4 class="card-title">Donas2-1</h4>
-                    <p class="card-text">Cambia este cupon en <strong>"Donas Glaseadas Susy"</strong> Valido en 2 x 1 en donas de 10:00-10:30 am</p>
-                    <h6 style="color: tomato;">Valido hasta el 7 Diciembre 2019</h6>
-                </div>
-    
-            </div>
+    <div class="row">
+        <div class="container">
+            <img src="./../../../assets/barracupones.png" width="70%" height="80%" class="col-12">
         </div>
-        <div class="bg-dark col-12 ml-3" style="color: white; text-align: center;">
+            <div class="card col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3" style="height: 100%; margin-top: -20px; ">
+                <img class="card-img-top align-self-center mt-2" style="width: 70%; height: 50%;"
+                    src="./../../../assets/cupon1.png">
+                    <div class="card-body">
+                        <h4 class="card-title">Burritos5-10</h4>
+                        <p class="card-text">Cambia este cupon en <strong>"Burritos Burroboy"</strong> valido en la compra de 5
+                            burritos con descuento de 10 pesos.</p>
+                        <h6 style="color: tomato;">Valido hasta el 7 Diciembre 2019</h6>
+                    </div>
+        
+            </div>
+            <div class="card col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3" style="height: 100%; margin-top: -20px; ">
+                <img class="card-img-top align-self-center mt-2" style="width: 70%; height: 50%;"
+                    src="./../../../assets/cupon2.png">
+                    <div class="card-body">
+                        <h4 class="card-title">Burritos5-10</h4>
+                        <p class="card-text">Cambia este cupon en <strong>"Burritos Burroboy"</strong> valido en la compra de 5
+                            burritos con descuento de 10 pesos.</p>
+                        <h6 style="color: tomato;">Valido hasta el 7 Diciembre 2019</h6>
+                    </div>
+        
+            </div>
+            <div class="card col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3" style="height: 100%; margin-top: -20px; ">
+                <img class="card-img-top align-self-center mt-2" style="width: 70%; height: 50%;"
+                    src="./../../../assets/cupon3.png">
+                    <div class="card-body">
+                        <h4 class="card-title">Aguas3-50</h4>
+                        <p class="card-text">Cambia este cupon en <strong>"Aguas Frescas Tec"</strong> valido en la compra de 3
+                            aguas frescas de 1 litro x 50 pesos</p>
+                        <h6 style="color: tomato;">Valido hasta el 7 Diciembre 2019</h6>
+                    </div>
+        
+            </div>
+            <div class="card col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3" style="height: 100%; margin-top: -20px; ">
+                <img class="card-img-top align-self-center mt-2" style="width: 70%; height: 50%;"
+                    src="./../../../assets/cupon4.png">
+                    <div class="card-body">
+                        <h4 class="card-title">Aguas2-20</h4>
+                        <p class="card-text">Cambia este cupon en <strong>"Aguas Frescas Tec"</strong> valido en la compra de 2
+                            agua frescas de 0.5 litros x 10 pesos</p>
+                        <h6 style="color: tomato;">Valido hasta el 7 Diciembre 2019</h6>
+                    </div>
+        
+            </div>
+            <div class="card col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3" style="height: 100%; margin-top: -20px; ">
+                <img class="card-img-top align-self-center mt-2" style="width: 70%; height: 50%;"
+                    src="./../../../assets/cupon5.png">
+                    <div class="card-body">
+                        <h4 class="card-title">Tortas4-100</h4>
+                        <p class="card-text">Cambia este cupon en <strong>"Tortas Pic Nic"</strong> valido en la compra de 4 tortas de pierna x 100 pesos.</p>
+                        <h6 style="color: tomato;">Valido hasta el 7 Diciembre 2019</h6>
+                    </div>
+        
+            </div>
+            <div class="card col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3" style="height: 100%; margin-top: -20px; ">
+                <img class="card-img-top align-self-center mt-2" style="width: 70%; height: 50%;"
+                    src="./../../../assets/cupon6.png">
+                    <div class="card-body">
+                        <h4 class="card-title">Tortas-10</h4>
+                        <p class="card-text">Cambia este cupon en <strong>"Tortas Pic Nic"</strong> valido en la compra de una torta de pierna con un descuento de 10 pesos</p>
+                        <h6 style="color: tomato;">Valido hasta el 7 Diciembre 2019</h6>
+                    </div>
+        
+            </div>
+            <div class="card col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3" style="height: 100%; margin-top: -20px; ">
+                <img class="card-img-top align-self-center mt-2" style="width: 70%; height: 50%;"
+                    src="./../../../assets/cupon7.png">
+                    <div class="card-body">
+                        <h4 class="card-title">Donas3-50</h4>
+                        <p class="card-text">Cambia este cupon en <strong>"Donas Glaseadas Susy"</strong> valido en la compra de 3 donas x 50 pesos</p>
+                        <h6 style="color: tomato;">Valido hasta el 7 Diciembre 2019</h6>
+                    </div>
+        
+            </div>
+            <div class="card col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3" style="height: 100%; margin-top: -20px; ">
+                <img class="card-img-top align-self-center mt-2" style="width: 70%; height: 50%;"
+                    src="./../../../assets/cupon8.png">
+                    <div class="card-body">
+                        <h4 class="card-title">Donas2-1</h4>
+                        <p class="card-text">Cambia este cupon en <strong>"Donas Glaseadas Susy"</strong> Valido en 2 x 1 en donas de 10:00-10:30 am</p>
+                        <h6 style="color: tomato;">Valido hasta el 7 Diciembre 2019</h6>
+                    </div>
+        
+            </div>
+            <div class="bg-dark col-12 ml-3" style="color: white; text-align: center;">
                 <p text-center> Todos nuestros cupones deben entregarse en fisico en cada establecimiento</p>
         </div>
-        
+    </div>
 </body>
 
 </html>

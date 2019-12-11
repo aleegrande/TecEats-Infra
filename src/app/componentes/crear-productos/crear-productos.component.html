@@ -62,8 +62,9 @@
             </nav>
     <div id="imagenfondo" class="ml-4 mr-4 mb-1 col-12" style="margin-top: -10px;">
         <br>
-        <div class="container" id="Formulario" style="margin-top: -25px;">
+        <div class="container" id="Formulario" style="margin-top: -20px;">
             <form (ngSubmit)="addProductos()" style="height: auto;">
+                <br>
                     <h2>Crear un Producto</h2>
                 <div class="row m-1">
                     <h6 class="col-5">Nombre del producto</h6><input class="col-6 border" type="text" name="nombre"
@@ -104,9 +105,11 @@
                 </div>
                 <div class="row m-1">
                     <h6 class="col-5">Link Generado</h6>
-                    <p style="width: 600px; size:3ch;">{{urlImage | async}}</p> <input #imageUser type="hidden" [value]="urlImage | async" id="valorurl"
-                        name="linkrea">
+                    <br>
                 </div>
+                    <p style="width: 1000px; height: 50px; size: 5px;">{{urlImage | async}}</p><input #imageUser type="hidden" [value]="urlImage | async" id="valorurl"
+                        name="linkrea">
+                
                 <div class="row m-1">
                     <h6 class="col-5">Pegue aqui el link Generado</h6><input class="col-6 border" type="text" name="link"
                         [(ngModel)]="productoss.link" placeholder="URL">
