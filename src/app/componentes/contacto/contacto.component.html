@@ -2,20 +2,22 @@
 <html lang="en">
 
 <head>
-    <title>Contacto</title>
+    <title>TecEats</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <style>
         .carousel-inner img {
-            width: 1000px;
+            width: 900px;
+        }
+
+        .carousel-inner img {
+            width: 900px;
         }
 
         .carousel-control-next,
         .carousel-control-prev {
             filter: invert(100%);
         }
-
         ul.demo {
             list-style-type: none;
             margin: 0;
@@ -23,137 +25,139 @@
         }
     </style>
 </head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
-<body style="width: 1330px;">
-    <nav class="navbar navbar-expand-sm" style="margin-top: -12px;">
-        <a class="navbar-brand ml-2" href="#">
-            <img src="./../../../assets/Logoeats-grande2.png" alt="logo" style="width:170px; height: 94px;">
-        </a>
-        <ul class="navbar-nav"
-            style="margin-left: -17px; width: 572px; background-image: url('./../../../assets/barranav.png'); height: 73px;">
-            <li class="nav-item">
-                <a class="nav-link " [routerLink]="['/verProductos']" routerLinkActive="router-link-active"
-                    style=" margin-top: 15px; width: 150px; color: white; ">Mis Productos</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link " [routerLink]="['/about2']" routerLinkActive="router-link-active"
-                    style="margin-left: -30px; margin-top: 15px; color: white; ">Acerca</a>
-            </li>
-            <li class="nav-item" style="text-align: center;">
-                <a class="nav-link" [routerLink]="['/contacto']" routerLinkActive="router-link-active"
-                    style=" margin-left: 0px; margin-top: 15px; color: white;">Contacto</a>
-            </li>
-            <li class="nav-item" style="text-align: center;">
-                <a class="nav-link" [routerLink]="['/home']" routerLinkActive="router-link-active"
-                    style=" margin-left: -5px; margin-top: 15px; width: 150px; color: white;">Cerrar Sesion</a>
-            </li>
+<body style="height: auto;">
+    <div>
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+            <a class="navbar-brand" href="#"><img src="./../../../assets/logotec.png" alt="logo"
+                    style="width:150px; height: 84px; margin-top: 5px;"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link " [routerLink]="['/verProductos']" style="color: white; ">Mis Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " [routerLink]="['/about2']" style=" color: white; ">Acerca</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/contacto']" style=" color: white;">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/home']" style=" color: white;">Cerrar Sesion</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="row mt-1">
+        <div id="demo" class="carousel slide col-12 col-sm-12 col-md-6 col-lg-9 col-xl-9" data-ride="carousel"
+        >
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+            <li data-target="#demo" data-slide-to="3"></li>
 
         </ul>
-    </nav>
-    <div class="mb-1 ml-3" style="margin-top: -10px;">
-        <div class="row" style="height: 550px;">
-            <div id="demo" class="carousel slide col-lg-9 col-md-6 col-sm-12 col-xs-12" data-ride="carousel"
-                style="height: 550px;">
 
-                <!-- Indicators -->
-                <ul class="carousel-indicators">
-                    <li data-target="#demo" data-slide-to="0" class="active"></li>
-                    <li data-target="#demo" data-slide-to="1"></li>
-                    <li data-target="#demo" data-slide-to="2"></li>
-
-                </ul>
-
-                <!-- The slideshow -->
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="../../../assets/contacto1.png" alt="burritos" style="height: 550px;">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="../../../assets/contacto2.png" alt="donas" style="height: 550px;">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="../../../assets/contacto3.png" alt="aguas" style="height: 550px;">
-                    </div>
-
-
-                </div>
-
-                <!-- Left and right controls -->
-                <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                </a>
-                <a class="carousel-control-next" href="#demo" data-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                </a>
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="../../../assets/contacto1.png" style="height: 535px; width: 100%;">
             </div>
-            <div class=" col-lg-3 col-md-6 col-sm-12 col-xs-12 bg-info" style="color: white;">
-
-                <h1>Comunicate con nosotros</h1>
-                <div style="text-align: end;">
-                    <p>
-                        <strong>
-                            Números de telefono
-                        </strong>
-                    </p>
-                    <ul class="demo">
-                        <li>
-                            3112645411
-                        </li>
-                        <li>
-                            3119093782
-                        </li>
-                        <li>
-                            3111266385
-                        </li>
-                    </ul>
-                </div>
-                <br>
-                <div style="text-align: end;">
-                    <p>
-                        <strong>
-                            Dirección
-                        </strong>
-                    </p>
-                    <ul class="demo">
-                        <li>
-                            Mexico #234 nte. Colonia Centro
-                        </li>
-                    </ul>
-                </div>
-                <br>
-                <div style="text-align: end;">
-                    <p>
-                        <strong>
-                            Creadores
-                        </strong>
-                    </p>
-                    <ul class="demo">
-                            <li>
-                                Ricardo Manuel Lopez Perales
-                            </li>
-                            <li>
-                                Gabriela Alejandra Grande De Uña
-                            </li>
-                            <li>
-                                sinahi Ruiz Rodriguez
-                            </li>
-                        </ul>
-                </div>
-                <br>
-                <div style="text-align: end;">
-                    <p>
-                        <strong>
-                            Todos los derechos reservados
-                        </strong>
-                    </p>
-                    <ul class="demo">
-                            <li>
-                                TEC-EATS 2019 
-                            </li>
-                        </ul>
-                </div>
+            <div class="carousel-item">
+                <img src="../../../assets/contacto2.png" style="height:  535px; width: 100%;">
             </div>
+            <div class="carousel-item">
+                <img src="../../../assets/contacto3.png" style="height:  535px; width: 100%;">
+            </div>
+
+
         </div>
+
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+    <div class=" col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 bg-info" style="color: white;">
+
+        <h1>Comunicate con nosotros</h1>
+        <div style="text-align: end;">
+            <p>
+                <strong>
+                    Números de telefono
+                </strong>
+            </p>
+            <ul class="demo">
+                <li>
+                    3112645411
+                </li>
+                <li>
+                    3119093782
+                </li>
+                <li>
+                    3111266385
+                </li>
+            </ul>
+        </div>
+        <br>
+        <div style="text-align: end;">
+            <p>
+                <strong>
+                    Dirección
+                </strong>
+            </p>
+            <ul class="demo">
+                <li>
+                    Mexico #234 nte. Colonia Centro
+                </li>
+            </ul>
+        </div>
+        <br>
+        <div style="text-align: end;">
+            <p>
+                <strong>
+                    Creadores
+                </strong>
+            </p>
+            <ul class="demo">
+                    <li>
+                        Ricardo Manuel Lopez Perales
+                    </li>
+                    <li>
+                        Gabriela Alejandra Grande De Uña
+                    </li>
+                    <li>
+                        sinahi Ruiz Rodriguez
+                    </li>
+                </ul>
+        </div>
+        <br>
+        <div style="text-align: end;">
+            <p>
+                <strong>
+                    Todos los derechos reservados
+                </strong>
+            </p>
+            <ul class="demo">
+                    <li>
+                        TEC-EATS 2019 
+                    </li>
+                </ul>
+        </div>
+    </div>
     </div>
 </body>
 

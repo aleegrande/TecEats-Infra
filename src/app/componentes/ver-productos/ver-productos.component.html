@@ -2,42 +2,56 @@
 <html lang="en">
 
 <head>
-    <title>Tus Productos</title>
+    <title>TecEats</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .carousel-inner img {
+            width: 900px;
+        }
+
+        .carousel-inner img {
+            width: 900px;
+        }
+
+        .carousel-control-next,
+        .carousel-control-prev {
+            filter: invert(100%);
+        }
+    </style>
 </head>
 
+
 <body>
-    <!--NAVBAR-->
-    <nav class="navbar navbar-expand-sm" style="margin-top: -12px;">
-            <a class="navbar-brand ml-2" href="#">
-                <img src="./../../../assets/Logoeats-grande2.png" alt="logo" style="width:170px; height: 94px;">
-            </a>
-            <ul class="navbar-nav" 
-                style="margin-left: -17px; width: 572px; background-image: url('./../../../assets/barranav.png'); height: 73px;">
-                <li class="nav-item" >
-                        <a class="nav-link " [routerLink]="['/verProductos']" routerLinkActive="router-link-active"
-                            style=" margin-top: 15px; width: 150px; color: white; ">Mis Productos</a>
+    <div>
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+            <a class="navbar-brand" href="#"><img src="./../../../assets/logotec.png" alt="logo"
+                    style="width:150px; height: 84px; margin-top: 5px;"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link " [routerLink]="['/verProductos']" style="color: white; ">Mis Productos</a>
                     </li>
-                <li class="nav-item">
-                    <a class="nav-link " [routerLink]="['/about2']" routerLinkActive="router-link-active"
-                        style="margin-left: -30px; margin-top: 15px; color: white; ">Acerca</a>
-                </li>
-                <li class="nav-item" style="text-align: center;">
-                    <a class="nav-link" [routerLink]="['/contacto']" routerLinkActive="router-link-active"
-                        style=" margin-left: 0px; margin-top: 15px; color: white;" >Contacto</a>
-                </li>
-                <li class="nav-item" style="text-align: center;">
-                    <a class="nav-link" [routerLink]="['/home']" routerLinkActive="router-link-active"
-                        style=" margin-left: -5px; margin-top: 15px; width: 150px; color: white;">Cerrar Sesion</a>
-                </li>
-    
-            </ul>
+                    <li class="nav-item">
+                        <a class="nav-link " [routerLink]="['/about2']" style=" color: white; ">Acerca</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/contacto']" style=" color: white;">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/home']" style=" color: white;">Cerrar Sesion</a>
+                    </li>
+                </ul>
+            </div>
         </nav>
-    <div style="width: auto;">
-        <div class="mr-2 d-flex flex-row-reverse">
+    </div>
+    <div class="row">
+        <div class=" col-12 d-flex flex-row-reverse">
             <a [routerLink]="['/crearProductos']" routerLinkActive="router-link-active">
-                <button class="btn btn-primary  mt-2">
+                <button class="btn btn-primary  mt-2 mr-2">
                     <img src='./../../../assets/productos.png' width="40px" />
                     Agregar Producto
                 </button>
@@ -45,9 +59,9 @@
         </div>
         <div *ngIf="productos.length>0;else noproductos">
             <div class="row ml-1 mr-1 mt-2">
-                <div class="card col-lg-4 col-md-6 col-sm-12 col-xs-12 " *ngFor="let p of productos">
+                <div class="card col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 " *ngFor="let p of productos">
                     <img class="card-img-top mt-3"
-                        style="height:200px; width: 350px; align-items: center; margin-left: 20px;" [src]="p.link"
+                        style="height:250px; width: 90; align-self: center; " [src]="p.link"
                         alt="aguaJamaica">
                     <div class="card-body" style="margin-top: -20px;">
                         <h5 class="card-title ">{{p.nombre}}</h5>
@@ -125,7 +139,7 @@
         </div> <!-- CIERRE DIV ROW-->
 
         <ng-template #noproductos>
-            <h1>No hay Productos disponibles :´(</h1>
+            <h1 style="margin-left:30px">No hay Productos disponibles :´(</h1>
         </ng-template>
     </div>
 </body>
